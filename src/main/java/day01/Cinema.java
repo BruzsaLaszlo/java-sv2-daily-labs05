@@ -13,12 +13,12 @@ public class Cinema {
         movies.add(movie);
     }
 
-    public List<Movie> findMovieByTime(LocalDateTime time) {
-        List<Movie> list = new ArrayList<>();
+    public List<String> findMovieByTime(LocalDateTime time) {
+        List<String> list = new ArrayList<>();
         for (Movie m : movies) {
             for (LocalDateTime ldt : m.getTimes()) {
                 if (ldt.isEqual(time)) {
-                    list.add(m);
+                    list.add(m.getTitle());
                     break;
                 }
             }
